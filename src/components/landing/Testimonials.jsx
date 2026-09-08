@@ -27,11 +27,14 @@ const testimonials = [
 
 export default function Testimonials() {
   return (
-    <section className="py-24 bg-white">
+    <section className="py-24 bg-salecop-black relative overflow-hidden">
+      {/* Línea decorativa superior */}
+      <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-salecop-orange/30 to-transparent"></div>
+      
       <Container>
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-salecop-black mb-4">Lo que dicen nuestros clientes</h2>
-          <p className="text-lg text-salecop-gray">Únete a cientos de negocios que ya modernizaron sus ventas.</p>
+          <h2 className="text-4xl font-bold text-white mb-4">Lo que dicen nuestros clientes</h2>
+          <p className="text-lg text-salecop-silver/80">Únete a cientos de negocios que ya modernizaron sus ventas.</p>
         </div>
 
         <div className="grid md:grid-cols-3 gap-8">
@@ -43,20 +46,20 @@ export default function Testimonials() {
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
             >
-              <Card className="h-full bg-salecop-cream/5 border-none">
+              <Card className="h-full bg-salecop-black/40 backdrop-blur-sm border border-salecop-gray/20 hover:border-salecop-orange/30 transition-all duration-300">
                 <div className="flex gap-1 mb-4">
                   {[...Array(t.rating)].map((_, i) => (
                     <Star key={i} size={18} className="fill-salecop-orange text-salecop-orange" />
                   ))}
                 </div>
-                <p className="text-salecop-charcoal mb-6 flex-grow font-medium italic">"{t.content}"</p>
+                <p className="text-salecop-cream/80 mb-6 flex-grow font-medium italic">"{t.content}"</p>
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-salecop-darkbrown flex items-center justify-center text-white font-bold">
+                  <div className="w-10 h-10 rounded-full bg-salecop-orange/20 flex items-center justify-center text-salecop-orange font-bold border border-salecop-orange/30">
                     {t.name.charAt(0)}
                   </div>
                   <div>
-                    <div className="font-bold text-salecop-black">{t.name}</div>
-                    <div className="text-sm text-salecop-gray">{t.role}</div>
+                    <div className="font-bold text-white">{t.name}</div>
+                    <div className="text-sm text-salecop-silver/70">{t.role}</div>
                   </div>
                 </div>
               </Card>

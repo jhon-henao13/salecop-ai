@@ -4,6 +4,60 @@
 @tailwind components;
 @tailwind utilities;
 
+
+/* Utilidades para fondos y efectos premium */
+.glass-dark {
+  @apply bg-salecop-black/60 backdrop-blur-xl border border-salecop-gray/20;
+}
+
+.gradient-text {
+  @apply bg-gradient-to-r from-salecop-orange via-salecop-cream to-salecop-orange bg-clip-text text-transparent;
+}
+
+.glow-orange {
+  box-shadow: 0 0 60px rgba(168, 62, 16, 0.15);
+}
+
+.bg-grid-pattern {
+  background-image: 
+    linear-gradient(rgba(168, 62, 16, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(168, 62, 16, 0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* Animaciones personalizadas */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.6; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.05); }
+}
+.animate-pulse-glow {
+  animation: pulse-glow 4s ease-in-out infinite;
+}
+
+/* Scrollbar personalizada (opcional) */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #060509;
+}
+::-webkit-scrollbar-thumb {
+  background: #a83e10;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #591e0b;
+}
+
+
 @layer base {
   body {
     @apply font-sans text-salecop-charcoal bg-salecop-cream antialiased selection:bg-salecop-orange selection:text-white;

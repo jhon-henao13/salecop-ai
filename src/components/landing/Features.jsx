@@ -16,32 +16,35 @@ const features = [
     title: 'Tiempo Real',
     description: 'Toma decisiones al instante con tableros de métricas actualizados en vivo.',
     icon: Zap,
-    color: 'text-yellow-600',
+    color: 'text-yellow-400',
     bg: 'bg-yellow-500/10'
   },
   {
     title: 'Offline First',
     description: 'Continúa facturando sin interrupciones incluso si tu conexión a internet falla.',
     icon: WifiOff,
-    color: 'text-salecop-darkbrown',
-    bg: 'bg-salecop-darkbrown/10'
+    color: 'text-salecop-cream',
+    bg: 'bg-salecop-cream/10'
   },
   {
     title: 'Analítica Avanzada',
     description: 'Reportes detallados de rendimiento de empleados, productos estrella y horas pico.',
     icon: BarChart3,
-    color: 'text-salecop-charcoal',
-    bg: 'bg-salecop-charcoal/10'
+    color: 'text-salecop-silver',
+    bg: 'bg-salecop-silver/10'
   }
 ];
 
 export default function Features() {
   return (
-    <section id="features" className="py-24 bg-white">
+    <section id="features" className="py-24 bg-salecop-deepbrown relative overflow-hidden">
+      {/* Efecto de brillo sutil */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[80%] h-[1px] bg-gradient-to-r from-transparent via-salecop-orange/50 to-transparent"></div>
+      
       <Container>
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-4xl font-bold text-salecop-black mb-4">Todo lo que tu negocio necesita</h2>
-          <p className="text-lg text-salecop-gray">Diseñado específicamente para el dinamismo del mercado colombiano, combinando potencia tecnológica con simplicidad de uso.</p>
+          <h2 className="text-4xl font-bold text-white mb-4">Todo lo que tu negocio necesita</h2>
+          <p className="text-lg text-salecop-silver/80">Diseñado específicamente para el dinamismo del mercado colombiano, combinando potencia tecnológica con simplicidad de uso.</p>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -53,12 +56,12 @@ export default function Features() {
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
             >
-              <Card className="h-full flex flex-col">
+              <Card className="h-full flex flex-col bg-salecop-black/40 backdrop-blur-sm border border-salecop-gray/20 hover:border-salecop-orange/40 transition-all duration-300 hover:shadow-lg hover:shadow-salecop-orange/10">
                 <div className={`w-14 h-14 rounded-xl flex items-center justify-center mb-6 ${feature.bg} ${feature.color}`}>
                   <feature.icon size={28} />
                 </div>
-                <h3 className="text-xl font-bold text-salecop-black mb-3">{feature.title}</h3>
-                <p className="text-salecop-charcoal/80 leading-relaxed flex-grow">
+                <h3 className="text-xl font-bold text-white mb-3">{feature.title}</h3>
+                <p className="text-salecop-silver/80 leading-relaxed flex-grow">
                   {feature.description}
                 </p>
               </Card>

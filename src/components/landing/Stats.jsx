@@ -12,9 +12,11 @@ const stats = [
 export default function Stats() {
   return (
     <section id="stats" className="py-20 bg-salecop-deepbrown text-salecop-cream relative overflow-hidden">
-      <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
+      {/* Fondo con patrón más sutil y degradado */}
+      <div className="absolute inset-0 bg-gradient-to-b from-salecop-black/50 to-transparent"></div>
+      <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-5"></div>
       <Container className="relative z-10">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 divide-x divide-salecop-cream/20">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 divide-x divide-salecop-cream/10">
           {stats.map((stat, index) => (
             <motion.div 
               key={index}
@@ -24,8 +26,8 @@ export default function Stats() {
               transition={{ delay: index * 0.1 }}
               className="text-center px-4"
             >
-              <div className="text-4xl md:text-5xl font-extrabold text-white mb-2">{stat.value}</div>
-              <div className="text-salecop-cream/80 font-medium text-sm md:text-base uppercase tracking-wider">{stat.label}</div>
+              <div className="text-4xl md:text-5xl font-extrabold text-salecop-orange mb-2">{stat.value}</div>
+              <div className="text-salecop-cream/70 font-medium text-sm md:text-base uppercase tracking-wider">{stat.label}</div>
             </motion.div>
           ))}
         </div>
